@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-2",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.0",
+    "astro": "^5.17.3",
+    "tailwindcss": "^4.2.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  }
+}
