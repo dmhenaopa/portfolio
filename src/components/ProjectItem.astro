@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  link: string;
+  github: string;
+  image: string;
+  tags: string[];
+}
+
+const { title, description, link, github, image, tags } = Astro.props;
+---
+
+<div
+  class="absolute w-3 h-3 bg-green-fresh-chartreuse rounded-full mt-2 -inset-s-1.5 border border-buffer"
+>
+</div>
+<h1 class="text-lg font-semibold text-heading my-2 text-green-bonsai">
+  {title}
+</h1>
+<p class="mb-4 text-base font-normal text-body text-pretty">{description}</p>
+<ul class="flex flex-row gap-x-2 mt-3">
+  {
+    tags.map((tag) => (
+      <li class="rounded-full border `border-brown-morocco-brown flex justify-center items-center gap-x-2 py-1 px-3 bg-yellow-light-goldenrod text-brown-morocco-brown text-xs font-semibold">
+        {tag}
+      </li>
+    ))
+  }
+</ul>
+<img
+  src={image}
+  alt=`Screenshot from the project ${title}`
+  class="py-8 right-1/2"
+/>
+<a
+  href={link}
+  class="btn bg-orange-calm-orange text-orange-pueblo font-medium me-2 px-3.5 py-1.5 rounded border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition"
+  >Link</a
+>
+<a
+  href={github}
+  class="btn bg-orange-calm-orange text-orange-pueblo font-medium me-2 px-3.5 py-1.5 rounded border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition"
+  >GitHub</a
+>

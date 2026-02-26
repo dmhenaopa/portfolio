@@ -1,0 +1,14 @@
+---
+import ProjectItem from "./ProjectItem.astro";
+import { Projects as projects } from "../data/projects";
+---
+
+<ol class="relative ml-4">
+  {
+    projects.map((project) => (
+      <article class="mb-15 ms-4">
+        <ProjectItem {...project} />
+      </article>
+    ))
+  }
+</ol>
