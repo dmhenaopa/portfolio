@@ -1,0 +1,125 @@
+---
+import researchImage from '../assets/research.jpg';
+import QAandProductImage from '../assets/QA.png';
+import dataImage from '../assets/data.png';
+import developmentImage from '../assets/developer.jpg';
+import outsideImage from '../assets/watercolor.jpg';
+import meImage from '../assets/me.jpg';
+---
+
+<div class="flex flex-col md:flex-row items-center gap-8">
+    <p class="mx-auto mt-2 tracking-tight text-balance text-xl text-gray-600 max-w-prose">I started my career in biology, but my path has always been about understanding systems — how they work, how they fail, and how small details affect the whole. Over time, that curiosity led me from scientific research into QA, product, data, and development, always with the same goal: to build and care for things thoughtfully and responsibly.</p>
+    <img src={meImage.src} alt="Photo of Diana" class="w-48 h-48 rounded-full object-cover shrink-0" />
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] py-20">
+  <div class="md:col-span-3 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer">
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img alt="Product Roadmap" class="absolute inset-0 w-full h-full object-cover" src={QAandProductImage.src}/>
+    <div class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+      <span class="px-4 py-2 rounded-full frosted-overlay border bg-[#8FCFD9] text-[#284551] border-[#284551] text-sm font-bold shadow-sm">QA &amp; Product Strategy</span>
+    </div>
+    <div class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 flex items-center px-8">
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="w-full relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block">Strategic Anchor</span>
+        <h2 class="text-xl font-bold mb-2 text-charcoal">QA &amp; Product Strategy</h2>
+        <p class="text-slate-700 max-w-md mb-4">Moved into software through QA and Product roles, focusing on manual testing, regression, system behavior, and protecting product quality in real-world environments where edge cases matter.</p>
+        <div class="flex gap-4">
+          <span class="px-3 py-1 rounded-full bg-[#8DBE67] border border-[#354f25] text-[10px] font-bold text-[#354f25] uppercase">Quality Engineering</span>
+          <span class="px-3 py-1 rounded-full bg-[#8DBE67] border border-[#354f25] text-[10px] font-bold text-[#354f25] uppercase">Product Owner</span>
+          <span class="px-3 py-1 rounded-full bg-[#8DBE67] border border-[#354f25] text-[10px] font-bold text-[#354f25] uppercase">Technical Writer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer">
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img alt="Leisure Hobby" class="absolute inset-0 w-full h-full object-cover" src={outsideImage.src}/>
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 transition-opacity duration-300 group-hover:opacity-0">
+      <span class="px-4 py-2 rounded-full frosted-overlay border bg-[#8FCFD9] text-[#284551] border-[#284551] text-sm font-bold shadow-sm">Tending</span>
+    </div>
+    <div class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col p-6">
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block">Offscreen</span>
+        <h3 class="font-bold text-xl text-charcoal mb-1">Tending</h3>
+        <p class="text-slate-700 text-sm">Knitting, watercolor, baking, and plant care <br>—<br>Same curiosity, different medium.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer">
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img alt="Code Editor" class="absolute inset-0 w-full h-full object-cover" src={developmentImage.src}/>
+    <div class="absolute bottom-8 left-8 z-20 transition-opacity duration-300 group-hover:opacity-0">
+      <span class="px-4 py-2 rounded-full frosted-overlay border bg-[#8FCFD9] text-[#284551] border-[#284551] text-sm font-bold shadow-sm">Software Development</span>
+    </div>
+    <div class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 p-10 flex flex-col justify-between">
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block">Technical Growth</span>
+        <h2 class="text-xl font-bold mb-2 text-charcoal">Software Development</h2>
+        <p class="text-slate-700 mb-8 text-md leading-relaxed">
+            Continuously learning development tools to better build, test, and improve the systems I work with, and to collaborate more effectively with engineering teams.
+        </p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-[#8DBE67] border border-[#354f25]">
+            <p class="text-[10px] text-[#354f25] text-center uppercase font-black tracking-widest">Frontend</p>
+            <p class="text-xs text-charcoal py-2">React · UI Logic · Design Systems Awareness</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-[#8DBE67] border border-[#354f25]">
+            <p class="text-[10px] text-[#354f25] text-center uppercase font-black tracking-widest">Backend</p>
+            <p class="text-xs text-charcoal py-2">Node · Python · APIs & Data Flows</p>
+          </div>
+        </div>
+      </div>
+      <button class="mt-auto flex items-center justify-center gap-2 py-4 rounded-2xl font-bold bg-[#fdb874] text-[#7c2c12] border border-[#7c2c12] hover:scale-105 hover:bg-[#fed6aa] transition relative z-10">
+        View Projects
+      </button>
+    </div>
+  </div>
+
+  <div class="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer">
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img alt="Laboratory Microscope" class="absolute inset-0 w-full h-full object-cover" src={researchImage.src}/>
+    <div class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+      <span class="px-4 py-2 rounded-full frosted-overlay border bg-[#8FCFD9] text-[#284551] border-[#284551] text-sm font-bold shadow-sm">Scientific Roots</span>
+    </div>
+    <div class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 p-8 flex flex-col justify-center">
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block">Foundational Story</span>
+        <h3 class="font-bold text-xl text-charcoal mb-2">Scientific Roots</h3>
+        <p class="text-slate-700 text-sm leading-relaxed max-w-sm">Started in biology and plant physiology, learning to observe systems, validate data, and understand how small changes affect the whole.</p>
+        <div class="mt-4 flex gap-2">
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold text-[#354f25] bg-[#8DBE67] border border-[#354f25] uppercase">Inquiry</span>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold text-[#354f25] bg-[#8DBE67] border border-[#354f25] uppercase">Observation</span>
+          <span class="px-3 py-1 rounded-full text-[10px] font-bold text-[#354f25] bg-[#8DBE67] border border-[#354f25] uppercase">Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer">
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img alt="Data Visualization" class="absolute inset-0 w-full h-full object-cover" src={dataImage.src}/>
+    <div class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0">
+      <span class="px-4 py-2 rounded-full frosted-overlay border bg-[#8FCFD9] text-[#284551] border-[#284551] text-sm font-bold shadow-sm">Data Dynamics</span>
+    </div>
+    <div class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 p-8 flex items-center justify-between">
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="w-full relative z-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block">Analytical Lens</span>
+        <h2 class="text-xl font-bold mb-1 text-charcoal">Data Dynamics</h2>
+        <p class="text-slate-700 text-sm mb-4">Began transitioning into data work, applying scientific thinking to data validation, exploration, and understanding how information flows across systems.</p>
+        <div class="flex gap-2">
+          <div class="px-3 py-1 rounded-full bg-[#8DBE67] border border-[#354f25] text-[10px] font-bold text-[#354f25] uppercase flex items-center">PostgreSQL</div>
+          <div class="px-3 py-1 rounded-full bg-[#8DBE67] border border-[#354f25] text-[10px] font-bold text-[#354f25] uppercase flex items-center">R</div>
+          <div class="px-3 py-1 rounded-full bg-[#8DBE67] border border-[#354f25] text-[10px] font-bold text-[#354f25] uppercase flex items-center">Python</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
