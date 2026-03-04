@@ -1,9 +1,24 @@
-interface Abilities {
+import researchImage from '../assets/research.jpg';
+import QAandProductImage from '../assets/QA.png';
+import dataImage from '../assets/data.png';
+import developmentImage from '../assets/developer.jpg';
+import outsideImage from '../assets/watercolor.jpg';
+import meImage from '../assets/me.jpg';
+
+type ChapterKey =
+  | "origins"
+  | "qaandproduct"
+  | "data"
+  | "development"
+  | "offscreen"
+  | "overview";
+
+type Abilities = {
   title: string;
   description?: string;
 }
 
-interface AboutItem {
+type Chapter = {
   image: string;
   alt: string;
   title?: string;
@@ -13,14 +28,14 @@ interface AboutItem {
   button?: string;
 }
 
-const About: AboutItem[] = [
-  {
+const Chapters: Record<ChapterKey, Chapter> = {
+  overview: {
     image: "meImage.src",
     alt: "Photo of Diana",
     description:
       "I started my career in biology, but my path has always been about understanding systems — how they work, how they fail, and how small details affect the whole. Over time, that curiosity led me from scientific research into QA, product, data, and development, always with the same goal: to build and care for things thoughtfully and responsibly.",
   },
-  {
+  qaandproduct: {
     image: "QAandProductImage.src",
     alt: "Product Roadmap",
     title: `QA &amp; Product Strategy`,
@@ -39,14 +54,14 @@ const About: AboutItem[] = [
       },
     ],
   },
-  {
+  offscreen: {
     image: "outsideImage.src",
     alt: "Leisure Hobby",
     title: "Tending",
     subtitle: "Offscreen",
     description: `Knitting, watercolor, baking, and plant care <br>—<br>Same curiosity, different medium.`,
   },
-  {
+  development: {
     image: "developmentImage.src",
     alt: "Code Editor",
     title: "Software Development",
@@ -65,7 +80,7 @@ const About: AboutItem[] = [
     ],
     button: "View Projects",
   },
-  {
+  origins: {
     image: "researchImage.src",
     alt: "Laboratory Microscope",
     title: "Scientific Roots",
@@ -84,7 +99,7 @@ const About: AboutItem[] = [
       },
     ],
   },
-  {
+  data: {
     image: "dataImage.src",
     alt: "Data Visualization",
     title: "Data Dynamics",
@@ -103,4 +118,6 @@ const About: AboutItem[] = [
       },
     ],
   },
-];
+};
+
+export { Chapters };
