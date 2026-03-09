@@ -22,4 +22,30 @@
   --color-black-darkest-black: #030000;
 
   --color-soft-topaz: #fed6aa;
+
+  /* Semantic colors for components */
+  --color-mint-accent: #38b2ac;
+  --color-charcoal: #2d3748;
+  --color-heading: #1a202c;
+  --color-body: #666766;
+  --color-fg-brand: #88133d;
+  --color-brand: #fb7b94;
+  --color-brand-strong: #e0607a;
+  --color-brand-medium: #fdb8c5;
+  --color-default: #8dbe67;
+  --color-buffer: #8dbe67;
+  --color-default-medium: #d1d5db;
+}
+
+@utility frosted-overlay {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@utility card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+@utility rounded-base {
+  border-radius: 0.5rem;
 }

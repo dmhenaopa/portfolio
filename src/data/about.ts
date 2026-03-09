@@ -30,15 +30,15 @@ type Chapter = {
 
 const Chapters: Record<ChapterKey, Chapter> = {
   overview: {
-    image: "meImage.src",
+    image: meImage.src,
     alt: "Photo of Diana",
     description:
       "I started my career in biology, but my path has always been about understanding systems — how they work, how they fail, and how small details affect the whole. Over time, that curiosity led me from scientific research into QA, product, data, and development, always with the same goal: to build and care for things thoughtfully and responsibly.",
   },
   qaandproduct: {
-    image: "QAandProductImage.src",
+    image: QAandProductImage.src,
     alt: "Product Roadmap",
-    title: `QA &amp; Product Strategy`,
+    title: `QA & Product Strategy`,
     subtitle: "Strategic Anchor",
     description:
       "Moved into software through QA and Product roles, focusing on manual testing, regression, system behavior, and protecting product quality in real-world environments where edge cases matter.",
@@ -55,14 +55,14 @@ const Chapters: Record<ChapterKey, Chapter> = {
     ],
   },
   offscreen: {
-    image: "outsideImage.src",
+    image: outsideImage.src,
     alt: "Leisure Hobby",
     title: "Tending",
     subtitle: "Offscreen",
     description: `Knitting, watercolor, baking, and plant care <br>—<br>Same curiosity, different medium.`,
   },
   development: {
-    image: "developmentImage.src",
+    image: developmentImage.src,
     alt: "Code Editor",
     title: "Software Development",
     subtitle: "Technical Growth",
@@ -81,7 +81,7 @@ const Chapters: Record<ChapterKey, Chapter> = {
     button: "View Projects",
   },
   origins: {
-    image: "researchImage.src",
+    image: researchImage.src,
     alt: "Laboratory Microscope",
     title: "Scientific Roots",
     subtitle: "Foundational Story",
@@ -100,7 +100,7 @@ const Chapters: Record<ChapterKey, Chapter> = {
     ],
   },
   data: {
-    image: "dataImage.src",
+    image: dataImage.src,
     alt: "Data Visualization",
     title: "Data Dynamics",
     subtitle: "Analytical Lens",

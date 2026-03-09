@@ -1,10 +1,4 @@
 ---
-import researchImage from "../assets/research.jpg";
-import QAandProductImage from "../assets/QA.png";
-import dataImage from "../assets/data.png";
-import developmentImage from "../assets/developer.jpg";
-import outsideImage from "../assets/watercolor.jpg";
-import meImage from "../assets/me.jpg";
 import { Chapters as chapters } from "../data/about";
 ---
 
@@ -21,7 +15,7 @@ import { Chapters as chapters } from "../data/about";
   />
 </div>
 
-<div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] py-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[220px] md:auto-rows-[300px] py-10 md:py-20">
   <div
     class="md:col-span-3 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
   >
@@ -32,7 +26,7 @@ import { Chapters as chapters } from "../data/about";
       src={chapters.qaandproduct.image}
     />
     <div
-      class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0"
+      class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0 hidden md:block"
     >
       <span
         class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
@@ -40,7 +34,7 @@ import { Chapters as chapters } from "../data/about";
       >
     </div>
     <div
-      class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0 flex items-center px-8"
+      class="absolute inset-0 z-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 md:translate-y-4 md:group-hover:translate-y-0 flex items-center px-8"
     >
       <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
       <div class="w-full relative z-10">
@@ -51,10 +45,10 @@ import { Chapters as chapters } from "../data/about";
         <h2 class="text-xl font-bold mb-2 text-charcoal">
           {chapters.qaandproduct.title}
         </h2>
-        <p class="text-slate-700 max-w-md mb-4">
+        <p class="text-slate-700 max-w-md mb-4 text-sm md:text-base">
           {chapters.qaandproduct.description}
         </p>
-        <div class="flex gap-4">
+        <div class="flex flex-wrap gap-2">
           {
             chapters.qaandproduct.abilities?.map((ability) => (
               <span class="px-3 py-1 rounded-full bg-green-bonsai border border-green-camouflage-olive-green text-[10px] font-bold text-green-camouflage-olive-green uppercase">
@@ -65,182 +59,182 @@ import { Chapters as chapters } from "../data/about";
         </div>
       </div>
     </div>
+  </div>
 
+  <div
+    class="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+  >
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img
+      alt={chapters.offscreen.alt}
+      class="absolute inset-0 w-full h-full object-cover"
+      src={chapters.offscreen.image}
+    />
     <div
-      class="md:col-span-1 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 transition-opacity duration-300 group-hover:opacity-0 hidden md:block"
     >
-      <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
-      <img
-        alt={chapters.offscreen.alt}
-        class="absolute inset-0 w-full h-full object-cover"
-        src={chapters.offscreen.image}
-      />
-      <div
-        class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 transition-opacity duration-300 group-hover:opacity-0"
+      <span
+        class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
+        >{chapters.offscreen.title}</span
       >
+    </div>
+    <div
+      class="absolute inset-0 z-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 flex flex-col p-6"
+    >
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="relative z-10">
         <span
-          class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
-          >{chapters.offscreen.title}</span
+          class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
+          >{chapters.offscreen.subtitle}</span
         >
-      </div>
-      <div
-        class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col p-6"
-      >
-        <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
-        <div class="relative z-10">
-          <span
-            class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
-            >{chapters.offscreen.subtitle}</span
-          >
-          <h3 class="font-bold text-xl text-charcoal mb-1">
-            {chapters.offscreen.title}
-          </h3>
-          <p class="text-slate-700 text-sm">{chapters.offscreen.description}</p>
-        </div>
+        <h3 class="font-bold text-xl text-charcoal mb-1">
+          {chapters.offscreen.title}
+        </h3>
+        <p class="text-slate-700 text-sm" set:html={chapters.offscreen.description}></p>
       </div>
     </div>
+  </div>
 
+  <div
+    class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+  >
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img
+      alt={chapters.development.alt}
+      class="absolute inset-0 w-full h-full object-cover"
+      src={chapters.development.image}
+    />
     <div
-      class="md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+      class="absolute bottom-8 left-8 z-20 transition-opacity duration-300 group-hover:opacity-0 hidden md:block"
     >
-      <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
-      <img
-        alt={chapters.development.alt}
-        class="absolute inset-0 w-full h-full object-cover"
-        src={chapters.development.image}
-      />
-      <div
-        class="absolute bottom-8 left-8 z-20 transition-opacity duration-300 group-hover:opacity-0"
+      <span
+        class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
+        >{chapters.development.title}</span
       >
-        <span
-          class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
-          >{chapters.development.title}</span
-        >
-      </div>
-      <div
-        class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 p-10 flex flex-col justify-between"
-      >
-        <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
-        <div class="relative z-10">
-          <span
-            class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
-            >{chapters.development.subtitle}</span
-          >
-          <h2 class="text-xl font-bold mb-2 text-charcoal">
-            {chapters.development.title}
-          </h2>
-          <p class="text-slate-700 mb-8 text-md leading-relaxed">
-            {chapters.development.description}
-          </p>
-          <div class="grid grid-cols-2 gap-4">
-            {
-              chapters.development.abilities?.map((ability) => (
-                <div class="p-4 rounded-2xl bg-green-bonsai border border-green-camouflage-olive-green">
-                  <p class="text-[10px] text-green-camouflage-olive-green text-center uppercase font-black tracking-widest">
-                    {ability.title}
-                  </p>
-                  <p class="text-xs text-charcoal py-2">
-                    {ability.description}
-                  </p>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-        <button
-          class="mt-auto flex items-center justify-center gap-2 py-4 rounded-2xl font-bold bg-orange-calm-orange text-orange-pueblo border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition relative z-10"
-        >
-          {chapters.development.button}
-        </button>
-      </div>
     </div>
-
     <div
-      class="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+      class="absolute inset-0 z-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 p-5 md:p-10 flex flex-col justify-between"
     >
-      <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
-      <img
-        alt={chapters.origins.alt}
-        class="absolute inset-0 w-full h-full object-cover"
-        src={chapters.origins.image}
-      />
-      <div
-        class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0"
-      >
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="relative z-10">
         <span
-          class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
-          >{chapters.origins.title}</span
+          class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
+          >{chapters.development.subtitle}</span
         >
-      </div>
-      <div
-        class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0 p-8 flex flex-col justify-center"
-      >
-        <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
-        <div class="relative z-10">
-          <span
-            class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
-            >{chapters.origins.subtitle}</span
-          >
-          <h3 class="font-bold text-xl text-charcoal mb-2">
-            {chapters.origins.title}
-          </h3>
-          <p class="text-slate-700 text-sm leading-relaxed max-w-sm">
-            {chapters.origins.description}
-          </p>
-          <div class="mt-4 flex gap-2">
-            {
-              chapters.origins.abilities?.map((ability) => (
-                <span class="px-3 py-1 rounded-full text-[10px] font-bold text-green-camouflage-olive-green bg-green-bonsai border border-green-camouflage-olive-green uppercase">
+        <h2 class="text-xl font-bold mb-2 text-charcoal">
+          {chapters.development.title}
+        </h2>
+        <p class="text-slate-700 mb-4 md:mb-8 text-sm md:text-base leading-relaxed">
+          {chapters.development.description}
+        </p>
+        <div class="grid grid-cols-2 gap-3 md:gap-4">
+          {
+            chapters.development.abilities?.map((ability) => (
+              <div class="p-3 md:p-4 rounded-2xl bg-green-bonsai border border-green-camouflage-olive-green">
+                <p class="text-[10px] text-green-camouflage-olive-green text-center uppercase font-black tracking-widest">
                   {ability.title}
-                </span>
-              ))
-            }
-          </div>
+                </p>
+                <p class="text-xs text-charcoal py-2">
+                  {ability.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <button
+        class="mt-auto flex items-center justify-center gap-2 py-3 md:py-4 rounded-2xl font-bold bg-orange-calm-orange text-orange-pueblo border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition relative z-10"
+      >
+        {chapters.development.button}
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+  >
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img
+      alt={chapters.origins.alt}
+      class="absolute inset-0 w-full h-full object-cover"
+      src={chapters.origins.image}
+    />
+    <div
+      class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0 hidden md:block"
+    >
+      <span
+        class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
+        >{chapters.origins.title}</span
+      >
+    </div>
+    <div
+      class="absolute inset-0 z-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 md:translate-x-4 md:group-hover:translate-x-0 p-6 md:p-8 flex flex-col justify-center"
+    >
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="relative z-10">
+        <span
+          class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
+          >{chapters.origins.subtitle}</span
+        >
+        <h3 class="font-bold text-xl text-charcoal mb-2">
+          {chapters.origins.title}
+        </h3>
+        <p class="text-slate-700 text-sm leading-relaxed max-w-sm">
+          {chapters.origins.description}
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          {
+            chapters.origins.abilities?.map((ability) => (
+              <span class="px-3 py-1 rounded-full text-[10px] font-bold text-green-camouflage-olive-green bg-green-bonsai border border-green-camouflage-olive-green uppercase">
+                {ability.title}
+              </span>
+            ))
+          }
         </div>
       </div>
     </div>
+  </div>
 
+  <div
+    class="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+  >
+    <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
+    <img
+      alt={chapters.data.alt}
+      class="absolute inset-0 w-full h-full object-cover"
+      src={chapters.data.image}
+    />
     <div
-      class="md:col-span-2 md:row-span-1 rounded-3xl overflow-hidden relative group card-shadow cursor-pointer"
+      class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0 hidden md:block"
     >
-      <div class="absolute inset-0 bg-black/5 rounded-3xl"></div>
-      <img
-        alt={chapters.data.alt}
-        class="absolute inset-0 w-full h-full object-cover"
-        src={chapters.data.image}
-      />
-      <div
-        class="absolute bottom-6 left-6 z-20 transition-opacity duration-300 group-hover:opacity-0"
+      <span
+        class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
+        >{chapters.data.title}</span
       >
+    </div>
+    <div
+      class="absolute inset-0 z-30 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 p-6 md:p-8 flex items-center justify-between"
+    >
+      <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
+      <div class="w-full relative z-10">
         <span
-          class="px-4 py-2 rounded-full frosted-overlay border bg-blue-river text-blue-queen-of-the-night border-blue-queen-of-the-night text-sm font-bold shadow-sm"
-          >{chapters.data.title}</span
+          class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
+          >{chapters.data.subtitle}</span
         >
-      </div>
-      <div
-        class="absolute inset-0 z-30 opacity-0 group-hover:opacity-100 transition-all duration-500 p-8 flex items-center justify-between"
-      >
-        <div class="absolute inset-0 bg-white/95 rounded-3xl"></div>
-        <div class="w-full relative z-10">
-          <span
-            class="text-xs font-bold uppercase tracking-widest text-mint-accent mb-2 block"
-            >{chapters.data.subtitle}</span
-          >
-          <h2 class="text-xl font-bold mb-1 text-charcoal">
-            {chapters.data.title}
-          </h2>
-          <p class="text-slate-700 text-sm mb-4">
-            {chapters.data.description}
-          </p>
-          <div class="flex gap-2">
-            {
-              chapters.data.abilities?.map((ability) => (
-                <div class="px-3 py-1 rounded-full bg-green-bonsai border border-green-camouflage-olive-green text-[10px] font-bold text-green-camouflage-olive-green uppercase flex items-center">
-                  {ability.title}
-                </div>
-              ))
-            }
-          </div>
+        <h2 class="text-xl font-bold mb-1 text-charcoal">
+          {chapters.data.title}
+        </h2>
+        <p class="text-slate-700 text-sm mb-4">
+          {chapters.data.description}
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {
+            chapters.data.abilities?.map((ability) => (
+              <div class="px-3 py-1 rounded-full bg-green-bonsai border border-green-camouflage-olive-green text-[10px] font-bold text-green-camouflage-olive-green uppercase flex items-center">
+                {ability.title}
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
