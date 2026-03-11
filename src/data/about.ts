@@ -1,9 +1,9 @@
-import researchImage from '../assets/research.jpg';
-import QAandProductImage from '../assets/QA.png';
-import dataImage from '../assets/data.png';
-import developmentImage from '../assets/developer.jpg';
-import outsideImage from '../assets/watercolor.jpg';
-import meImage from '../assets/me.jpg';
+import researchImage from "../assets/research.jpg";
+import QAandProductImage from "../assets/QA.png";
+import dataImage from "../assets/data.png";
+import developmentImage from "../assets/developer.jpg";
+import outsideImage from "../assets/watercolor.jpg";
+import meImage from "../assets/me.jpg";
 
 type ChapterKey =
   | "origins"
@@ -16,7 +16,7 @@ type ChapterKey =
 type Abilities = {
   title: string;
   description?: string;
-}
+};
 
 type Chapter = {
   image: string;
@@ -26,7 +26,7 @@ type Chapter = {
   description: string;
   abilities?: Abilities[];
   button?: string;
-}
+};
 
 const Chapters: Record<ChapterKey, Chapter> = {
   overview: {

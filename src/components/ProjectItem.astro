@@ -12,13 +12,15 @@ const { title, description, link, github, image, tags } = Astro.props;
 ---
 
 <div
-  class="absolute w-3 h-3 bg-green-fresh-chartreuse rounded-full mt-2 -inset-s-5.5 border border-buffer"
+  class="absolute w-3 h-3 bg-green-fresh-chartreuse rounded-full mt-2 -inset-s-5.5 border border-green-bonsai"
 >
 </div>
-<h3 class="text-lg font-semibold text-heading my-2 text-green-bonsai">
+<h3 class="text-lg font-semibold my-2 text-green-bonsai">
   {title}
 </h3>
-<p class="mb-4 text-base font-normal text-body text-pretty">{description}</p>
+<p class="mb-4 text-base font-normal text-grey-bold-grey text-pretty">
+  {description}
+</p>
 <ul class="flex flex-row flex-wrap gap-x-2 gap-y-2 mt-3">
   {
     tags.map((tag) => (
@@ -33,17 +35,23 @@ const { title, description, link, github, image, tags } = Astro.props;
   alt={`Screenshot from the project ${title}`}
   class="py-8 w-full"
 />
-{link && (
-  <a
-    href={link}
-    class="btn bg-orange-calm-orange text-orange-pueblo font-medium me-2 px-3.5 py-3 rounded border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition"
-    >Link</a
-  >
-)}
-{github && (
-  <a
-    href={github}
-    class="btn bg-orange-calm-orange text-orange-pueblo font-medium me-2 px-3.5 py-3 rounded border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition"
-    >GitHub</a
-  >
-)}
+{
+  link && (
+    <a
+      href={link}
+      class="btn bg-orange-calm-orange text-orange-pueblo font-medium me-2 px-3.5 py-3 rounded border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition"
+    >
+      Link
+    </a>
+  )
+}
+{
+  github && (
+    <a
+      href={github}
+      class="btn bg-orange-calm-orange text-orange-pueblo font-medium me-2 px-3.5 py-3 rounded border border-orange-pueblo hover:scale-105 hover:bg-soft-topaz transition"
+    >
+      GitHub
+    </a>
+  )
+}
