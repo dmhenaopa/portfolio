@@ -1,6 +1,5 @@
-<form class="mx-auto" method="post" action="https://formspree.io/f/mykqrqnv">
+<form id="contact-form" class="mx-auto">
   <input type="hidden" name="_subject" value="New contact from portfolio" />
-  <input type="hidden" name="_next" value="https://dmhenaopa.github.io/portfolio/thank-you" />
   <input type="text" name="_gotcha" class="hidden" aria-hidden="true" />
   <div class="relative z-0 w-full mb-5 group">
     <input
@@ -84,8 +83,34 @@
   <div class="flex justify-end">
     <button
       type="submit"
-      class="box-border hover:bg-soft-cherry focus:ring-4 focus:ring-cherry-blossom-pink shadow-xs font-medium leading-5 text-sm w-full sm:w-auto px-10 sm:px-20 py-3 focus:outline-none transition-colors bg-pink-camelia text-pink-reddish-purple rounded border border-pink-reddish-purple dark:bg-pink-camelia dark:text-pink-reddish-purple"
+      id="submit-btn"
+      class="box-border hover:bg-soft-cherry focus:ring-4 focus:ring-cherry-blossom-pink shadow-xs font-medium leading-5 text-sm w-full sm:w-auto px-10 sm:px-20 py-3 focus:outline-none transition-colors bg-pink-camelia text-pink-reddish-purple rounded border border-pink-reddish-purple dark:bg-pink-camelia dark:text-pink-reddish-purple disabled:opacity-50"
       >Submit</button
     >
   </div>
 </form>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const btn = document.getElementById("submit-btn") as HTMLButtonElement;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+
+    const res = await fetch("https://formspree.io/f/mykqrqnv", {
+      method: "POST",
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      window.location.href = `${import.meta.env.BASE_URL}thank-you`;
+    } else {
+      btn.disabled = false;
+      btn.textContent = "Submit";
+      alert("Something went wrong. Please try again.");
+    }
+  });
+</script>
