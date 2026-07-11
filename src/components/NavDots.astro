@@ -1,0 +1,73 @@
+---
+const sections = [
+  { id: "top", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  { id: "contact", label: "Contact" },
+];
+---
+
+<nav
+  class="fixed right-4 md:right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-4"
+  aria-label="Section navigation"
+>
+  {
+    sections.map(({ id, label }) => (
+      <a
+        href={`#${id}`}
+        data-section={id}
+        aria-label={label}
+        class="nav-dot group relative flex items-center justify-end p-2 -m-2"
+      >
+        <span class="absolute right-6 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-xs font-medium text-dark-gunmetal-grey bg-white/80 backdrop-blur-sm px-2.5 py-1 rounded-full whitespace-nowrap border border-green-bonsai/40 pointer-events-none">
+          {label}
+        </span>
+        <span class="dot block w-2.5 h-2.5 rounded-full border-2 border-green-bonsai/50 bg-transparent transition-all duration-300 group-hover:border-green-bonsai group-hover:scale-110" />
+      </a>
+    ))
+  }
+</nav>
+
+<script>
+  const dots = document.querySelectorAll<HTMLAnchorElement>(".nav-dot");
+
+  function setActive(id: string) {
+    dots.forEach((dot) => {
+      const dotSpan = dot.querySelector<HTMLSpanElement>(".dot");
+      if (!dotSpan) return;
+      if (dot.dataset.section === id) {
+        dotSpan.classList.add(
+          "bg-pink-camelia",
+          "border-pink-reddish-purple",
+          "scale-125",
+        );
+      } else {
+        dotSpan.classList.remove(
+          "bg-pink-camelia",
+          "border-pink-reddish-purple",
+          "scale-125",
+        );
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    { rootMargin: "-40% 0px -40% 0px", threshold: 0 },
+  );
+
+  dots.forEach((dot) => {
+    const section = document.getElementById(dot.dataset.section!);
+    if (section) observer.observe(section);
+  });
+
+  // Activate first dot on load
+  setActive("top");
+</script>

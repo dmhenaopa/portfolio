@@ -1,13 +1,17 @@
 ---
 interface Props {
   id: string;
+  center?: boolean;
 }
 
-const { id } = Astro.props;
+const { id, center } = Astro.props;
 ---
 
 <section
-  class="w-full lg:w-185 mx-auto py-16 md:py-28 lg:py-44 pb-10 md:pb-20 lg:pb-30"
+  class:list={[
+    "w-full lg:w-185 mx-auto pt-8 md:pt-14 pb-10 md:pb-20 lg:pb-30 min-h-screen snap-start scroll-mt-20",
+    center && "flex flex-col justify-center",
+  ]}
   id={id}
 >
   <slot />
